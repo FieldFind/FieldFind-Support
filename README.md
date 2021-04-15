@@ -1,3 +1,3 @@
-# Greener Support
+# FieldFind Support
 
-Web application made for creation and tracking of support tickets by Greener users.
+Web application made for creation and tracking of support tickets by FieldFind users.
