@@ -15,7 +15,7 @@ export default function TicketsPage({ history }) {
   useEffect(() => {
     axios
       .get(
-        `https://greener-support.herokuapp.com/tickets?user=${sessionStorage.getItem(
+        `https://fieldfind-backend.herokuapp.com/tickets?users_permissions_user=${sessionStorage.getItem(
           "userId"
         )}`,
         {
@@ -45,10 +45,10 @@ export default function TicketsPage({ history }) {
           <td>
             <span
               className={`badge badge-${
-                ticketStates[ticket.ticketState.id]
+                ticketStates[ticket.state.id]
               } py-2 w-100`}
             >
-              {ticket.ticketState.state}
+              {ticket.state.state}
             </span>
           </td>
           <td>{ticket.title}</td>

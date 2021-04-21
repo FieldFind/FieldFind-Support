@@ -46,10 +46,10 @@ function RegisterForm({ history }) {
 
       if (password === confirmedPass) {
         axios
-          .post("https://greener-support.herokuapp.com/auth/local/register", {
+          .post("https://fieldfind-backend.herokuapp.com/auth/local/register", {
             username: name,
             email: email,
-            password: password,
+            password: email,
           })
           .then((response) => {
             sessionStorage.setItem("jwt", response.data.jwt);

@@ -11,7 +11,7 @@ export default function TicketDetail({ match }) {
   useEffect(() => {
     axios
       .get(
-        `https://greener-support.herokuapp.com/tickets/${match.params.ticketId}`,
+        `https://fieldfind-backend.herokuapp.com/tickets/${match.params.ticketId}`,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("jwt")}`,
@@ -36,17 +36,17 @@ export default function TicketDetail({ match }) {
               <h6 className="card-subtitle mb-2 text-muted">
                 <span
                   className={`badge badge-${
-                    ticketStates[ticket.ticketState.id]
+                    ticketStates[ticket.state.id]
                   } mt-2 mr-1`}
                 >
-                  {ticket.ticketState.state}
+                  {ticket.state.state}
                 </span>{" "}
                 Ticket #{ticket.id}
               </h6>
               <p className="card-text">{ticket.description}</p>
               <p class="card-text">
                 <small class="text-muted">
-                  Abierto por {ticket.user.username}, el
+                  Abierto por {ticket.users_permissions_user.username}, el
                   {" " +
                     moment(ticket.created_at).format("DD/MM/YYYY hh:mm:ss")}
                 </small>

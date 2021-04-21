@@ -25,12 +25,12 @@ export default function SupportFormPage({ history }) {
 
       axios
         .post(
-          "https://greener-support.herokuapp.com/tickets",
+          "https://fieldfind-backend.herokuapp.com/tickets",
           {
             title,
             description,
-            ticketState: 2,
-            user: sessionStorage.getItem("userId"),
+            state: 2,
+            users_permissions_user: sessionStorage.getItem("userId"),
           },
           {
             headers: {

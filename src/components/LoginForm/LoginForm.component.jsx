@@ -32,9 +32,9 @@ function LoginForm({ history }) {
         setDisabled(true);
         event.preventDefault();
         axios
-          .post("https://greener-support.herokuapp.com/auth/local", {
+          .post("https://fieldfind-backend.herokuapp.com/auth/local", {
             identifier: email,
-            password: password,
+            password: email,
           })
           .then((response) => {
             sessionStorage.setItem("jwt", response.data.jwt);
